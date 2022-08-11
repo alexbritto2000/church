@@ -1,0 +1,32 @@
+<nav class="fh5co-nav" role="navigation">
+    <div class="container-wrap">
+        <div class="top-menu">
+            <div class="row">
+                <div class="col-md-12 col-offset-0 text-center">
+                    <div id="fh5co-logo"><a [routerLink]="['/home']">Holy Trinity Church</a></div>
+                </div>
+                <div class="col-md-12 col-md-offset-0 text-center menu-1">
+                    <ul>
+                        <li routerLinkActive="active"><a [routerLink]="['/home']">Home</a></li>
+                        <li class="has-dropdown" routerLinkActive="active">
+                            <a [routerLink]="['/ministry']">Ministry</a>
+                            <ul class="dropdown">
+                                <li><a [routerLink]="['/ministry']">Men Fellowship</a></li>
+                                <li><a [routerLink]="['/women_fellowship']">Women Fellowship</a></li>
+                                <li><a [routerLink]="['/you_fellowship']">Youth Fellowship</a></li>
+                                <li><a [routerLink]="['/child_fellowship']">Children Ministry</a></li>
+                            </ul>
+                        </li>
+                        <li routerLinkActive="active"><a [routerLink]="['/history']">History</a></li>
+                        <li routerLinkActive="active"><a [routerLink]="['/time']">Service Timing</a></li>
+                        <li routerLinkActive="active"><a [routerLink]="['/gallery']">Gallery</a></li>
+                        <li routerLinkActive="active"><a [routerLink]="['/contact']">Contact</a></li>
+                        <!-- <li><a href="#" class="donate">Donate</a></li> -->
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</nav>
+

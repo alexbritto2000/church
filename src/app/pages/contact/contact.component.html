@@ -1,0 +1,78 @@
+<app-header></app-header>
+<div class="container-wrap">
+    <aside id="fh5co-hero">
+        <div class="flexslider">
+            <ul class="slides">
+               <li style="background-image: url(assets/images/ministry/banner.jpg);">
+                   <div class="overlay"></div>
+                   <div class="container-fluid">
+                       <div class="row">
+                           <div class="col-md-6 col-md-offset-3 text-center slider-text">
+                               <div class="slider-text-inner">
+                                   <h1>Contact Us</h1>
+                               </div>
+                           </div>
+                       </div>
+                   </div>
+               </li>
+              </ul>
+          </div>
+    </aside>
+    <div id="fh5co-contact">
+        <div class="row animate-box">
+            <div class="col-md-6 col-md-offset-3 text-center fh5co-heading">
+                <h2>Contact us</h2>
+                <p>{{contact.description}}</p>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-md-push-8 animate-box">
+                <h3>Our Address</h3>
+                <ul class="contact-info">
+                    <li><i class="icon-location4"></i>{{contact.location}}</li>
+                    <li><i class="icon-phone3"></i>{{contact.mobile}}</li>
+                    <li><i class="icon-location3"></i><a href={{contact.mail}}>{{contact.mail}}</a></li>
+                    <li><i class="icon-globe2"></i><a href={{contact.website}}>{{contact.website}}</a></li>
+                </ul>
+            </div>
+            <form #userForm="ngForm" (ngSubmit)="onSubmit(userForm.value)">
+            <div class="col-md-7 col-md-pull-2 animate-box">
+                <div class="row">
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="text" #name="ngModel" class="form-control" [class.is-invalid]="name.touched && name.invalid" name="name" placeholder="Name" [(ngModel)]="contact.name" required>
+
+                            <small class="text-danger" [class.d-none]="name.valid || name.untouched">Name is required</small>
+                        </div>
+                    </div>
+
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <input type="email" #email="ngModel" name="email" class="form-control" [class.is-invalid]="email.touched && email.invalid" placeholder="Email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="contact.email" required>
+
+                            <small class="text-danger" [class.d-none]="email.valid || email.untouched">Email is required and enter correct format</small>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <textarea name="message" #message="ngModel" class="form-control" id="" cols="30" rows="7" placeholder="Message" [(ngModel)]="contact.message" [class.is-invalid]="name.touched && name.invalid" required></textarea>
+                        </div>
+
+                        <small class="text-danger" [class.d-none]="message.valid || message.untouched">Message is required</small>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <input type="submit" [disabled]="!userForm.valid" value="Send Message" class="btn btn-primary btn-modify">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+</div><!-- END container-wrap -->
+<app-footer></app-footer>
